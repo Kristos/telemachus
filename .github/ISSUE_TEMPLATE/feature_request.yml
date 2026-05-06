@@ -1,0 +1,27 @@
+name: Feature request
+description: Suggest a new capability, tool, or improvement
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: Describe the use case before the solution. "I want X so I can Y."
+      placeholder: |
+        I run Telemachus on a homelab and want to give it a tool that
+        controls my smart-home devices via Home Assistant. Right now I
+        have to drop into bash every time.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would the ideal solution look like?
+      description: Optional — sketch the API, UX, or behaviour you have in mind.
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What have you tried or considered?
+      description: Optional — workarounds, similar projects, related tools.

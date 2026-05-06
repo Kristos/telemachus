@@ -1,0 +1,12 @@
+node_modules/
+.telemachus/
+.planning/
+.claude/
+tm
+*.log
+CLAUDE.md
+KC_MEMORY.md
+.git/
+.gitignore
+.env
+.env.local

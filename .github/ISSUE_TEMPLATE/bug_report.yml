@@ -1,0 +1,64 @@
+name: Bug report
+description: Something isn't working as documented
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report. The clearer your
+        reproduction, the faster it gets fixed.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, what did you get instead?
+      placeholder: |
+        I ran `docker compose up discord` and the bot connected to Discord,
+        but DMs to it never receive a reply. I expected to see a reply
+        within a few seconds.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Set ANTHROPIC_API_KEY + DISCORD_BOT_TOKEN + DISCORD_OWNER_ID in .env
+        2. Run `docker compose up discord`
+        3. DM the bot from the owner account
+        4. Bot logs `incoming Discord message` but never sends a reply
+    validations:
+      required: true
+
+  - type: input
+    id: deployment
+    attributes:
+      label: How are you running Telemachus?
+      placeholder: "docker compose up discord (Linux x86_64) / bun run dev / native install via tm discord install"
+    validations:
+      required: true
+
+  - type: input
+    id: provider
+    attributes:
+      label: LLM provider
+      placeholder: "anthropic / openai-compat (Z.ai) / openai-compat (OpenRouter) / llamacpp"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      placeholder: "v4.0.0 or commit SHA from `git rev-parse HEAD`"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste log output from the bot. Redact tokens/IDs first.
+      render: text

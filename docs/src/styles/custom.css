@@ -1,0 +1,156 @@
+/*/* Telemachus docs — Claude Code-inspired theme */
+
+:root {
+	--sl-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--sl-font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+}
+
+/* Accent: orange like Claude */
+:root {
+	--sl-color-accent-low: #3d1a00;
+	--sl-color-accent: #d97706;
+	--sl-color-accent-high: #fdba74;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #f5f5f4;
+	--sl-color-gray-2: #d6d3d1;
+	--sl-color-gray-3: #a8a29e;
+	--sl-color-gray-4: #78716c;
+	--sl-color-gray-5: #44403c;
+	--sl-color-gray-6: #292524;
+	--sl-color-black: #1c1917;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #fef3c7;
+	--sl-color-accent: #d97706;
+	--sl-color-accent-high: #7c2d12;
+	--sl-color-white: #1c1917;
+	--sl-color-gray-1: #292524;
+	--sl-color-gray-2: #44403c;
+	--sl-color-gray-3: #78716c;
+	--sl-color-gray-4: #a8a29e;
+	--sl-color-gray-5: #d6d3d1;
+	--sl-color-gray-6: #f5f5f4;
+	--sl-color-gray-7: #fafaf9;
+	--sl-color-black: #ffffff;
+}
+
+/* Tighter, more refined typography */
+.sl-markdown-content {
+	line-height: 1.7;
+}
+
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+	letter-spacing: -0.02em;
+	font-weight: 700;
+}
+
+.sl-markdown-content h2 {
+	margin-top: 2.5em;
+	padding-bottom: 0.4em;
+	border-bottom: 1px solid var(--sl-color-gray-5);
+}
+
+/* Inline code — subtle orange tint */
+.sl-markdown-content :not(pre) > code {
+	background-color: color-mix(in srgb, var(--sl-color-accent) 12%, transparent);
+	color: var(--sl-color-accent-high);
+	border: 1px solid color-mix(in srgb, var(--sl-color-accent) 20%, transparent);
+	border-radius: 4px;
+	padding: 0.15em 0.4em;
+	font-size: 0.9em;
+}
+
+/* Code blocks — more breathing room */
+.sl-markdown-content pre {
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tables — cleaner separators */
+.sl-markdown-content table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.sl-markdown-content th {
+	background-color: var(--sl-color-gray-6);
+	font-weight: 600;
+	text-align: left;
+	padding: 0.75em 1em;
+	border-bottom: 2px solid var(--sl-color-accent);
+}
+
+.sl-markdown-content td {
+	padding: 0.75em 1em;
+	border-bottom: 1px solid var(--sl-color-gray-5);
+}
+
+.sl-markdown-content tr:hover td {
+	background-color: color-mix(in srgb, var(--sl-color-accent) 4%, transparent);
+}
+
+/* Hero — bigger, more dramatic */
+.hero {
+	padding-block: 4rem;
+}
+
+.hero h1 {
+	font-size: clamp(2.5rem, 6vw, 5rem);
+	letter-spacing: -0.04em;
+	background: linear-gradient(135deg, var(--sl-color-white) 0%, var(--sl-color-accent) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.hero .tagline {
+	font-size: 1.25rem;
+	color: var(--sl-color-gray-3);
+	max-width: 42rem;
+}
+
+/* Action buttons — Claude-style pill */
+.hero .actions a {
+	border-radius: 9999px;
+	padding: 0.75em 1.75em;
+	font-weight: 500;
+	transition: all 0.15s ease;
+}
+
+.hero .actions a:first-child {
+	background: var(--sl-color-accent);
+	color: white;
+	border: none;
+}
+
+.hero .actions a:first-child:hover {
+	background: color-mix(in srgb, var(--sl-color-accent) 85%, white);
+	transform: translateY(-1px);
+	box-shadow: 0 8px 20px color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
+}
+
+/* Sidebar — tighter */
+.sidebar-content {
+	padding-top: 1rem;
+}
+
+.sidebar-content a {
+	border-radius: 4px;
+}
+
+/* Card grid on splash */
+.card {
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 12px;
+	transition: all 0.2s ease;
+}
+
+.card:hover {
+	border-color: var(--sl-color-accent);
+	transform: translateY(-2px);
+	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}

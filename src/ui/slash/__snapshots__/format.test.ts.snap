@@ -1,0 +1,12 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`formatMcp all 5 statuses render as fenced table (snapshot) 1`] = `
+"\`\`\`
+NAME    MODE   STATUS    LAST ACTIVITY  TOOLS  TRUST
+fs      eager  alive     3m ago         7      dangerous
+slow    eager  idle      2h ago         3      risky
+search  lazy   lazy      —              5      dangerous
+broken  lazy   dead      30s ago        0      dangerous
+off     eager  disabled  —              2      safe
+\`\`\`"
+`;

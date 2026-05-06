@@ -1,0 +1,83 @@
+---
+title: Telemachus
+description: A personal CLI coding agent — Claude Code-style, multi-provider, runs anywhere.
+template: splash
+hero:
+  tagline: Full agentic power. Radical context efficiency. Works with Anthropic, OpenAI, and local models on macOS, Linux, and Windows.
+  actions:
+    - text: Get started
+      link: /quickstart/
+      icon: right-arrow
+      variant: primary
+    - text: GitHub
+      link: https://github.com/Kristos/telemachus
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard, Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Install in 30 seconds
+
+<Tabs>
+  <TabItem label="macOS / Linux">
+    ```bash
+    git clone https://github.com/Kristos/telemachus.git
+    cd telemachus
+    bun install && bun link
+    export ANTHROPIC_API_KEY=sk-ant-...
+    tm
+    ```
+  </TabItem>
+  <TabItem label="Windows">
+    ```powershell
+    git clone https://github.com/Kristos/telemachus.git
+    cd telemachus
+    bun install; bun link
+    $env:ANTHROPIC_API_KEY = "sk-ant-..."
+    tm
+    ```
+  </TabItem>
+  <TabItem label="Local (Ollama)">
+    ```bash
+    ollama pull qwen2.5-coder:7b
+    git clone https://github.com/Kristos/telemachus.git
+    cd telemachus && bun install && bun link
+    tm
+    ```
+  </TabItem>
+</Tabs>
+
+## Why Telemachus?
+
+<CardGrid>
+  <Card title="Context efficient" icon="rocket">
+    Orphan-safe sliding window caps the conversation at a configurable message count without ever severing `tool_use` / `tool_result` pairs.
+  </Card>
+  <Card title="Multi-provider" icon="puzzle">
+    Anthropic (native prompt caching), OpenAI-compatible APIs, and local Ollama / LM Studio / llama.cpp. Switch mid-session with `/model`.
+  </Card>
+  <Card title="Cross-platform" icon="laptop">
+    macOS, Linux, and **native Windows** — no WSL required. Use `TM_SHELL` to pick cmd.exe or PowerShell.
+  </Card>
+  <Card title="Claude Code compatible" icon="approve-check">
+    Auto-mounts MCP servers from `~/.claude.json` and skills from `~/.claude/skills/`. Zero duplicate config.
+  </Card>
+  <Card title="Live cost tracking" icon="bars">
+    Token usage, session totals, USD cost, and context-window percent right in the status bar. No surprises.
+  </Card>
+  <Card title="Ships as one binary" icon="setting">
+    `bun build --compile` produces a single `tm` executable. No runtime required.
+  </Card>
+</CardGrid>
+
+## Explore the docs
+
+<CardGrid>
+  <LinkCard title="Quickstart" href="/quickstart/" description="Get Telemachus running in under a minute." />
+  <LinkCard title="Providers & models" href="/guides/providers/" description="Switching between Anthropic, OpenAI, and local models." />
+  <LinkCard title="Local LLMs" href="/guides/local-llms/" description="Ollama, LM Studio, and llama.cpp setup." />
+  <LinkCard title="Built-in tools" href="/reference/tools/" description="The 10 tools every Telemachus session ships with." />
+  <LinkCard title="Windows setup" href="/guides/windows/" description="Run natively on Windows without WSL." />
+  <LinkCard title="Configuration" href="/reference/configuration/" description="Config file schema and environment variables." />
+</CardGrid>

@@ -1,0 +1,30 @@
+node_modules/
+dist/
+.env
+*.local
+kc
+
+# v3.1 project index (local SQLite DB)
+.kc-index/
+
+# Public port planning — personal, never commit
+PUBLIC_PORT.md
+
+# Compiled binary
+tm
+
+# User data directory (sessions, audit logs, config)
+.telemachus/
+
+# macOS metadata
+.DS_Store
+
+# Personal / private files (never goes to public repo)
+.planning/
+CLAUDE.md
+KC_MEMORY.md
+FINAL_REVIEW.md
+
+# Claude Code / agent tool directories (contain local permissions and worktrees)
+.claude/
+.claire/

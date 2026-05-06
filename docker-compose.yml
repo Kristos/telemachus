@@ -1,0 +1,21 @@
+services:
+  discord:
+    build: .
+    env_file: .env
+    environment:
+      - TM_SERVICE=discord
+    volumes:
+      - telemachus-data:/root/.telemachus
+    restart: unless-stopped
+
+  telegram:
+    build: .
+    env_file: .env
+    environment:
+      - TM_SERVICE=telegram
+    volumes:
+      - telemachus-data:/root/.telemachus
+    restart: unless-stopped
+
+volumes:
+  telemachus-data:
